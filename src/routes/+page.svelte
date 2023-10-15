@@ -23,23 +23,35 @@ $:(()=>{
     </div>
 </section>
 
-<section class="w-full shadow bg-stone-900 rounded">
+<section class="w-full shadow bg-stone-900 rounded" id="zin">
     <div class="flex flex-row justify-end px-12">
         <h1 class=" text-white text-5xl font-ubuntu md:pl-20 lg:pl-32 md:pt-12 lg:pt-16">Vous avez besion de {icons[counter]} ?</h1>
     </div>
-    <div class="flex flex-row px-8 py-12 relative">
-    <div class="flex flex-row justify-end w-full">
-        <a class="float-right bg-sky-400 text-2xl rounded-xl px-8 py-4 font-ubuntu" href="/shop">Voir notre Shop 🛍️</a>
-    </div>
-    
-    <div class="flex flex-col rounded-tr-3xl absolute bottom-0 left-0 bg-sky-300 ">
-        <h1 class="text-3xl px-4 pt-8 font-play">S'inscrire pour recevior des nouvoutés </h1>
-        <div class="flex flex-row justify-end px-4 pb-4">
-            <button class="bg-stone-900 px-4 py-2 text-xl rounded-xl text-white font-ubuntu font-bold">S'inscrire</button>
+    <div class="flex flex-row px-8 py-12 items-center relative">
+        
+        <div class="flex-1 flex flex-row">
+            <div class="w-1/3 flex flex-col items-center">
+                <img src="chem-illus-1/1.png" class="border-4 w-2/3 p-2 border-zinc-200 rounded-full" alt="">
+                <h1 class="text-center font-light text-2xl text-zinc-200">Matériel</h1>
+            </div>
+            <div class="w-1/3 flex flex-col items-center">
+                <img src="chem-illus-1/2.png" class="border-4 w-2/3 p-2 border-zinc-200 rounded-full" alt="">
+                <h1 class="text-center font-light text-2xl text-zinc-200">Matière</h1>
+            </div>
         </div>
-    </div>
+    <div class="flex flex-row justify-end">
+            <a class="float-right bg-sky-400 text-2xl rounded-xl px-8 py-4 font-ubuntu" href="/shop">Voir notre Shop 🛍️</a>
+        </div>
+    
     </div>
 </section>
+
+<div class="flex flex-col rounded-tr-3xl absolute bottom-0 left-0 bg-sky-300 ">
+    <h1 class="text-3xl px-4 pt-8 font-play">S'inscrire pour recevior des nouvoutés </h1>
+    <div class="flex flex-row justify-end px-4 pb-4">
+        <button class="bg-stone-900 px-4 py-2 text-xl rounded-xl text-white font-ubuntu font-bold">S'inscrire</button>
+    </div>
+</div>
 
 <section class="bg-sky-200 rounded pt-4 md:pt-8 lg:pt-12 px-32">
 <div class="w-full">
@@ -78,5 +90,9 @@ $:(()=>{
 #bonjour{
     background-image: url("bg-bonjour.png");
     background-size: cover;
+}
+#zin{
+    background-image: url("zin.png");
+    background-attachment: fixed;
 }
 </style>
