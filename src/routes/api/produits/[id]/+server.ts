@@ -33,7 +33,7 @@ export const  PUT = AuthMiddleware(async ({params, request})=>{
     } catch(err) {
         throw error(500, "Unknown error : "+(err as Error).message)
     }
-}, true)
+}, true);
 
 
 export const DELETE = AuthMiddleware(async ({params})=>{
@@ -48,4 +48,4 @@ export const DELETE = AuthMiddleware(async ({params})=>{
     } catch(err) {
         throw error(500, "Unknown error : "+(err as Error).message)
     }
-}, true)
+}, true);

@@ -1,7 +1,33 @@
 {
 	"/": [],
+	"/admin": [
+		"src/routes/admin/+layout.server.ts"
+	],
+	"/admin/login": [
+		"src/routes/admin/+layout.server.ts"
+	],
+	"/api/commandes": [
+		"src/routes/api/commandes/+server.ts"
+	],
+	"/api/commandes/[id]": [
+		"src/routes/api/commandes/[id]/+server.ts"
+	],
+	"/api/produits": [
+		"src/routes/api/produits/+server.ts"
+	],
+	"/api/produits/[id]": [
+		"src/routes/api/produits/[id]/+server.ts"
+	],
+	"/api/profile": [
+		"src/routes/api/profile/+server.ts"
+	],
+	"/api/profile/[id]": [
+		"src/routes/api/profile/[id]/+server.ts"
+	],
 	"/recettes": [],
 	"/recettes/[category]": [],
 	"/shop": [],
-	"/shop/[slug]": []
+	"/shop/[slug]": [
+		"src/routes/shop/[slug]/+page.ts"
+	]
 }

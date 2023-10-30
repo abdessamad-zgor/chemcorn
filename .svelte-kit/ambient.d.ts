@@ -26,6 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const npm_package_dependencies_zod: string;
 	export const TMUX: string;
 	export const LC_TIME: string;
 	export const USER: string;
@@ -103,8 +104,8 @@ declare module '$env/static/private' {
 	export const GNOME_TERMINAL_SERVICE: string;
 	export const TERM_PROGRAM: string;
 	export const npm_lifecycle_script: string;
-	export const SSH_AUTH_SOCK: string;
 	export const OPAMNOENVNOTICE: string;
+	export const SSH_AUTH_SOCK: string;
 	export const SSH_AGENT_LAUNCHER: string;
 	export const npm_package_devDependencies__sveltejs_kit: string;
 	export const npm_config_version_git_message: string;
@@ -125,6 +126,7 @@ declare module '$env/static/private' {
 	export const OPAM_SWITCH_PREFIX: string;
 	export const npm_config_strict_ssl: string;
 	export const QT_IM_MODULE: string;
+	export const npm_package_dependencies_firebase: string;
 	export const PWD: string;
 	export const npm_execpath: string;
 	export const XDG_DATA_DIRS: string;
@@ -134,8 +136,8 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies__sveltejs_adapter_auto: string;
 	export const npm_config_save_prefix: string;
 	export const npm_config_ignore_optional: string;
-	export const LC_PAPER: string;
 	export const TMUX_PLUGIN_MANAGER_PATH: string;
+	export const LC_PAPER: string;
 	export const npm_package_scripts_preview: string;
 	export const TMUX_PANE: string;
 	export const MANPATH: string;
@@ -171,6 +173,7 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		npm_package_dependencies_zod: string;
 		TMUX: string;
 		LC_TIME: string;
 		USER: string;
@@ -248,8 +251,8 @@ declare module '$env/dynamic/private' {
 		GNOME_TERMINAL_SERVICE: string;
 		TERM_PROGRAM: string;
 		npm_lifecycle_script: string;
-		SSH_AUTH_SOCK: string;
 		OPAMNOENVNOTICE: string;
+		SSH_AUTH_SOCK: string;
 		SSH_AGENT_LAUNCHER: string;
 		npm_package_devDependencies__sveltejs_kit: string;
 		npm_config_version_git_message: string;
@@ -270,6 +273,7 @@ declare module '$env/dynamic/private' {
 		OPAM_SWITCH_PREFIX: string;
 		npm_config_strict_ssl: string;
 		QT_IM_MODULE: string;
+		npm_package_dependencies_firebase: string;
 		PWD: string;
 		npm_execpath: string;
 		XDG_DATA_DIRS: string;
@@ -279,8 +283,8 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies__sveltejs_adapter_auto: string;
 		npm_config_save_prefix: string;
 		npm_config_ignore_optional: string;
-		LC_PAPER: string;
 		TMUX_PLUGIN_MANAGER_PATH: string;
+		LC_PAPER: string;
 		npm_package_scripts_preview: string;
 		TMUX_PANE: string;
 		MANPATH: string;

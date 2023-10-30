@@ -1,7 +1,5 @@
 <script>
     import Crums from "../../components/crums.svelte";
-
-
     let produits = [
         {
             title: "acide nilic",
