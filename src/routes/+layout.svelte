@@ -3,7 +3,7 @@
     import Appbar from "../components/appbar.svelte";
 </script>
 
-<main class="w-full min-h-screen relative bg-sky-50">
+<main class="w-full min-h-screen">
     <Appbar/>
     <slot/>
 </main>
