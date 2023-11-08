@@ -1,62 +1,71 @@
 import {z} from "zod"
 
-export const Zproduit = z.object({
-    slug: z.string(),
-    type: z.enum(["actif", "emulsifiant", "multi-fontions", "conservateur", "texture"]),
-    titre: z.string(),
-    variants: z.object({images: z.string().array(), prix: z.number(), volume: z.string()}).array(),
-    details: z.object({
-        proprietes: z.string().array(),
-        utilisations: z.object({
-            categorie: z.enum(["cheveaux", "peau", "cosmitique", "detergent"]),
-            use: z.string().or(z.string().array())
-        }).array(),
-        enPratique: z.object({
-            nom_INCI : z.string(),
-            origin: z.string().optional(),
-            dosage:  z.object({}).catchall(z.string()),
-            solubilite: z.enum(["eau", "huile", "emulsion"]).array()
-        }),
-        description: z.string()
-    })
-})
+type ProduitTypes = "actif"|"emulsifiant"|"multi-fontions"|"conservateur"|"texture" 
 
-export type Produit = z.infer<typeof Zproduit>
+export class Produit {
+  slug: string;
+  type: ProduitTypes;
+  titre: string;
+  variants: { images:URL|string, prix:number, volume: string }[];
+  properties: string[];
+  utilisations: { categorie:  "cheveaux"|"peau"|"cosmitique"|"detergent", use: string|string[] }[];
+  inci: string;
+  origin: string;
+  dosage: { [key: string]: string };
+  solubilite: ("eau"|"huile"|"emulsion")[];
+  description: string;
+  constructor(
+    slug: string="",
+    type: ProduitTypes="actif",
+    titre: string="",
+    variants: { images:URL|string, prix:number, volume: string }[]=[{images: "", prix: 0, volume: ""}],
+    properties: string[]=[],
+    utilisations: { categorie:  "cheveaux"|"peau"|"cosmitique"|"detergent", use: string|string[] }[]=[{categorie: "peau", use: ""}],
+    inci: string="",
+    origin: string="",
+    dosage: { [key: string]: string }={},
+    solubilite: ("eau"|"huile"|"emulsion")[]=["eau"],
+    description: string=""
+  ){
+    this.slug = slug
+    this.type = type
+    this.titre = titre
+    this.variants = variants
+    this.properties = properties
+    this.utilisations = utilisations
+    this.inci = inci
+    this.origin = origin
+    this.dosage = dosage
+    this.solubilite = solubilite
+    this.description = description
+  }
+}
 
-export const Zitem = z.object({
-    titre: z.string(),
-    volume: z.string(),
-    prix: z.number(),
-    image: z.string(),
-    quantite: z.number(),
-    type: z.string()
-})
+export const ProduitSchema = z.instanceof(Produit)
 
-export type Item = z.infer<typeof Zitem>
+export class Item {
+  titre: string
+  volume: string
+  prix: number
+  image: string
+  quantite: number
+  type: string
+  constructor(
+    titre: string,
+    volume: string,
+    prix: number,
+    image: string,
+    quantite: number,
+    type: string
+  ) {
+    this.titre = titre
+    this.volume = volume
+    this.prix = prix
+    this.image = image
+    this.quantite = quantite
+    this.type = type
+  }
+}
 
-export const Zprofile = z.object({
-    uid: z.string(),
-    addresse: z.object({
-        city: z.string(),
-        street: z.string(),
-        postal_code: z.number(),
-    }),
-    wishlist: Zitem.array(),
-    recettes: z.null(),
-    name: z.string(),
-    phone: z.string()
-})
-
-export type Profile = z.infer<typeof Zprofile>
-
-export const Zcommand = z.object({
-    date_de_command: z.date(),
-    status: z.enum(["livrée", "retard", "confirmé", "en-route", "non-confirmé"]),
-    cart: Zitem.array(),
-    totale: z.number(),
-    uid: z.string().optional(),
-    cid: z.string().optional()
-})
-
-export type Command = z.infer<typeof Zcommand>
+export let ItemSchema = z.instanceof(Item)
 
