@@ -1,17 +1,15 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
+import * as env from "$env/static/public"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBYa0se0PDPKt6kTlGdgie-cgF9oU_43fM",
-  authDomain: "the-final-asoul.firebaseapp.com",
-  projectId: "the-final-asoul",
-  storageBucket: "the-final-asoul.appspot.com",
-  messagingSenderId: "935273362776",
-  appId: "1:935273362776:web:5be2d091ab658a2bffa12d",
-  measurementId: "G-P45MQHKTGV"
+  apiKey: env.PUBLIC_FIREBASE_API_KEY,
+  authDomain: env.PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: env.PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: env.PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: env.PUBLIC_FIREBASE_APP_ID,
+  measurementId: env.PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-let app = initializeApp(firebaseConfig);
-export let auth = getAuth(app)
-
+export const app = initializeApp(firebaseConfig);
 

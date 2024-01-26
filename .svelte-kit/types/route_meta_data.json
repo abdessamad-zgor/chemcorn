@@ -1,10 +1,17 @@
 {
+	"/(app)": [],
+	"/(admin)": [],
 	"/": [],
-	"/admin": [
-		"src/routes/admin/+layout.server.ts"
+	"/(admin)/admin": [
+		"src/routes/(admin)/admin/+layout.server.ts",
+		"src/routes/(admin)/admin/+layout.server.ts"
 	],
-	"/admin/login": [
-		"src/routes/admin/+layout.server.ts"
+	"/(admin)/admin/login": [
+		"src/routes/(admin)/admin/+layout.server.ts"
+	],
+	"/(admin)/admin/produit": [
+		"src/routes/(admin)/admin/produit/+page.ts",
+		"src/routes/(admin)/admin/+layout.server.ts"
 	],
 	"/api/commandes": [
 		"src/routes/api/commandes/+server.ts"
@@ -24,10 +31,10 @@
 	"/api/profile/[id]": [
 		"src/routes/api/profile/[id]/+server.ts"
 	],
-	"/recettes": [],
-	"/recettes/[category]": [],
-	"/shop": [],
-	"/shop/[slug]": [
-		"src/routes/shop/[slug]/+page.ts"
+	"/(app)/recettes": [],
+	"/(app)/recettes/[category]": [],
+	"/(app)/shop": [],
+	"/(app)/shop/[slug]": [
+		"src/routes/(app)/shop/[slug]/+page.ts"
 	]
 }
